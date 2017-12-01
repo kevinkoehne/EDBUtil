@@ -27,7 +27,10 @@ uses
   ReleaseSessionsCmd in 'Commands\ReleaseSessionsCmd.pas',
   CopyToStoreCmd in 'Commands\CopyToStoreCmd.pas',
   MustacheDefCmd in 'Commands\MustacheDefCmd.pas',
-  JSONHelper in 'JSONHelper.pas';
+  JSONHelper in 'JSONHelper.pas',
+  SynCommons in 'Synopse\SynCommons.pas',
+  SynMustache in 'Synopse\SynMustache.pas',
+  SynLZ in 'Synopse\SynLZ.pas';
 
 var
   isVerbose : Boolean;
