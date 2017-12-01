@@ -39,7 +39,7 @@ procedure ShowHelp;
 begin
   writeln('Elevate Database Utilities');
   Writeln('Copyright(c) 2011 Bay Lakes Information Systems LLC');
-  writeln('A utility for a variety of functions for Elevate DB');
+  writeln('A utility for a variety of functions for Elevate DB.');
   writeln('');
   writeln('Usage: EDBUtil <command> <parameters>');
   writeln('Commands:');
