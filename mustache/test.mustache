@@ -1,0 +1,18 @@
+<H1>A test</h1>
+Rooms
+{{<header}}
+<h2>Rooms</h2>
+{{/header}}
+
+{{<roomInfo}}
+<li id="{{ID}}"><strong>{{RoomNumber}}</strong></li>
+{{/roomInfo}}
+
+{{>header}}
+
+<ul>
+{{#ds}}
+  {{>roomInfo}}
+{{/ds}}
+</ul>
+{{>header}} End.
