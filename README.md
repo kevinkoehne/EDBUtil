@@ -42,18 +42,17 @@ _Commands_:
 
     /Import - imports a CSV file into a table
     Params:
-    /table - table to which to import the data
-    /input - CSV file from which to get the data
-    /hasHeader - indicates that the CSV file's first line is a header
-    /op - required. Specify APPEND to add the records to existing data. Specify OVERWRITE to delete existing data.
-    /map - list of field names and column position in CSV in the form "fieldnameA=x;fieldnameB=y"
+      /table - table to which to import the data
+      /input - CSV file from which to get the data
+      /hasHeader - indicates that the CSV file's first line is a header
+      /op - required. Specify APPEND to add the records to existing data. Specify OVERWRITE to delete existing data.
+      /map - list of field names and column position in CSV in the form "fieldnameA=x;fieldnameB=y"
            Where fieldNameA and fieldNameB are names in the table
            x and y are the column positions to import into the table.
            if the /map parameter starts with @, then the mappings are read from a file
-    /disableTriggers - turn off triggers on table. This is useful if there are triggers that update data (like LastUpdatedDate).
-    /trueValue - the value in a column that represents TRUE. Everything else is false. Default true
-    /emailNumField - field that is mapped from an email address to an entry into tblEmail
-    /truncStrings - Truncate strings that are too long
+      /disableTriggers - turn off triggers on table. This is useful if there are triggers that update data (like LastUpdatedDate).
+      /trueValue - the value in a column that represents TRUE. Everything else is false. Default true
+      /truncStrings - Truncate strings that are too long
 
     /MSSQL - exports create table and data
     Params:

@@ -34,7 +34,8 @@ var
 
 procedure ShowHelp;
 begin
-  writeln('Elevate Database Utilities  Copyright(c) 2011 Bay Lakes Information Systems LLC');
+  writeln('Elevate Database Utilities');
+  Writeln('Copyright(c) 2011 Bay Lakes Information Systems LLC');
   writeln('A utility for a variety of functions for Elevate DB');
   writeln('');
   writeln('Usage: EDBUtil <command> <parameters>');
@@ -87,7 +88,6 @@ begin
   writeln('	    /disableTriggers - turn off triggers on table. This is useful if there are triggers that update');
   writeln('					           data (like LastUpdatedDate).');
   Writeln('     /trueValue - the value in a column that represents TRUE. Everything else is false. Default true');
-  Writeln('     /emailNumField - field that is mapped from an email address to an entry into tblEmail');
   WriteLn('     /truncStrings - Truncate strings that are too long');
   Writeln;
   Writeln('  /MSSQL - exports create table and data');
@@ -245,7 +245,6 @@ begin
                   ParamExists('/disableTriggers'),
                   ParamAsString('/date', False, ''),
                   ParamAsString('/truevalue', False, 'true'),
-                  ParamAsString('/emailnumField', False, ''),
                   ParamExists('/truncStrings'),
                   db,
                   userId,

@@ -10,7 +10,6 @@ procedure ImportCSV(tableName : string;
                     disableTriggers : Boolean;
                     dateFormat : string; // made up of yyyy, yy, mm, dd
                     trueValue  : String; // the value that translates to TRUE in the CSV data. All else is false.
-                    emailNumField : String; // the name of the field that is the email num. During import this field is mapped to tblEmails instead of being directly imported.
                     truncateStrings: Boolean;
                     databaseName : String;
                     userId, password : String;
@@ -128,7 +127,6 @@ procedure ImportCSV(tableName : string;
                     disableTriggers : Boolean;
                     dateFormat : string; // made up of yyyy, yy, mm, dd
                     trueValue  : String; // the value that translates to TRUE in the CSV data. All else is false.
-                    emailNumField : String; // the name of the field that is the email num. During import this field is mapped to tblEmails instead of being directly imported.
                     truncateStrings: Boolean;
                     databaseName : String;
                     userId, password : String;
@@ -420,31 +418,7 @@ begin
 
               ftSmallint, ftInteger, ftWord, ftLargeint :
               begin
-                if (emailNumField <> '') and (LowerCase(fieldName) = LowerCase(emailNumField)) then
-                begin
-                  if Trim(sCSVValue) = '' then
-                    dqInsert.ParamByName(fieldName).AsInteger := 0
-
-                  else
-                  begin
-                    dqFindEmail.ParamByName('email').Value := sCSVValue;
-                    dqFindEmail.ExecSQL;
-                    if not dqFindEmail.EOF then
-                      dqInsert.ParamByName(fieldName).AsInteger := dqFindEmail.FieldByName('ID').AsInteger
-                    else
-                    begin
-                      dqInsertEmail.ParamByName('ID').Value := null;
-                      dqInsertEmail.ParamByName('email').AsString := Copy(sCSVValue, 1, 60); // make sure it fits.
-                      dqInsertEmail.ExecSQL;
-                      dqInsert.ParamByName(fieldName).AsInteger := dqInsertEmail.ParamByName('ID').AsInteger;
-                      dqInsertEmail.Close;
-                    end;
-                    dqFindEmail.Close;
-                  end;
-
-                end
-                else
-                  dqInsert.ParamByName(fieldName).AsInteger := StrToInt(sCSVValue);
+                dqInsert.ParamByName(fieldName).AsInteger := StrToInt(sCSVValue);
               end;
               ftBoolean : dqInsert.ParamByName(fieldName).Value := LowerCase(sCSVValue) = trueValue;
               ftFloat : dqInsert.ParamByName(fieldName).AsFloat := StrToFloat(sCSVValue);
