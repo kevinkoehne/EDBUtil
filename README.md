@@ -1,7 +1,12 @@
 # EDBUtil
 A command-line utility for working with an Elevate Software database.
 
-_Usage_: EDBUtil \<command\> \<parameters\>
+## Dependencies
+* ElevateSoft Elevate Database libraries
+* Delphi XE+
+
+## Usage
+EDBUtil \<command\> \<parameters\>
 
 _Commands_:
 
