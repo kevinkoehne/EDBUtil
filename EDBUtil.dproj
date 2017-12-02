@@ -78,7 +78,7 @@
                     <Parameters Name="UseLauncher">False</Parameters>
                     <Parameters Name="LoadAllSymbols">True</Parameters>
                     <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
-                    <Parameters Name="RunParams">/import /lodgical /map &quot;ResNumber=1;BandNumber=2;firstname=4;lastname=5;DateIssued=6;IsMasterBand=3&quot; /input &quot;bandBig.csv&quot; /table tblWristbands /hasHeader /OP overwrite /disabletriggers /truevalue 1</Parameters>
+                    <Parameters Name="RunParams"></Parameters>
                 </Parameters>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
