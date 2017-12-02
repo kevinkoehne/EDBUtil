@@ -16,9 +16,7 @@ var
 implementation
 uses
   SysUtils,
-  StrUtils,
-
-  ConsoleHelper;
+  StrUtils;
 
 // Gets params from switchs, both unary and binary
 // All params start with '-' or '/'
