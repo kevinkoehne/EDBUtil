@@ -10,11 +10,6 @@ EDBUtil \<command\> \<parameters\>
 
 _Commands_:
 
-    /setDBPath - sets the path for the database.  
-    Params:  
-        /configPath - path of the configuration for the database engine  
-        /newPath    - the new path for the database
-
     /query - executes a query against the database.  
     Params:  
       /sql       - sql to execute (use @ to specify a file containing the sql)  
@@ -23,11 +18,6 @@ _Commands_:
       /format    - the format of the output. Possible options are Table, CSV, JSON, mustache. (default table)  
       /NoHeader  - header not included in output.  
       /Mustache  - Mustache template (use @ to specify a file containing a mustache template NOTE: Use {{#ds}}{{/ds}} for section
-
-    /mustacheDef - creates a JSON form of a table definition, and can map it to a mustache file.  
-    Params:
-      /table     - name of table for which to generate JSON definition
-      /mustach - Mustache template (use @ to specify a file containing a mustache template). NOTE: Use {{#tableDef}}{{#fields}}{{/fields}}{{/tableDef}} for section
 
     /verify - runs VERIFY on table.
     Params:
@@ -44,6 +34,11 @@ _Commands_:
       /store - name of the store which contains the backup (required)
       /name  - name of the backup file to restore. Use * to restore the file with the latest timestamp (required)
       /quiet - do not verify with user the name of the latest backup (e.g. when /name * is used)
+
+    /mustacheDef - creates a JSON form of a table definition, and can map it to a mustache file.  
+    Params:
+      /table     - name of table for which to generate JSON definition
+      /mustach - Mustache template (use @ to specify a file containing a mustache template). NOTE: Use {{#tableDef}}{{#fields}}{{/fields}}{{/tableDef}} for section
 
     /Import - imports a CSV file into a table
     Params:
@@ -69,6 +64,11 @@ _Commands_:
     Params:
      /file - name of the file to copy
      /store - name of the Elevate store to which to copy
+
+    /setDBPath - sets the path for the database.  
+    Params:  
+        /configPath - path of the configuration for the database engine  
+        /newPath    - the new path for the database
 
     /CreateDB - creates a new database
     Params:
