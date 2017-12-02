@@ -1,5 +1,5 @@
 # EDBUtil
-A command-line utility for working with an Elevate database.
+A command-line utility for working with an Elevate Software database.
 
 _Usage_: EDBUtil \<command\> \<parameters\>
 
