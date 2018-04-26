@@ -61,20 +61,18 @@ var
   	f : TextFile;
     line,
     retVal : String;
+    sqlLoader : TStringList;
 
   begin
-
     if sql[1] = '@' then // read from a file
     begin
-    	AssignFile(f, strutils.RightStr(sql, length(sql) - 1));
-      Reset(f);
-      retVal := '';
-      while not Eof(f) do
-      begin
-      	readln(f, line);
-        retVal := retVal + #13#10 + line;
+      sqlLoader := TStringList.Create;
+      try
+        sqlLoader.LoadFromFile(strutils.RightStr(sql, length(sql) - 1));
+        retVal := sqlLoader.Text;
+      finally
+        sqlLoader.Free;
       end;
-      CloseFile(f);
 
     end
     else
